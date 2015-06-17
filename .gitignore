@@ -1,0 +1,5 @@
+.project
+bower_components/
+.protect/
+vendor/
+config.json

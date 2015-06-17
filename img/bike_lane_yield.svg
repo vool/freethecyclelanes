@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="100"
+   height="100"
+   id="svg2">
+  <defs
+     id="defs4">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         id="path3796"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Lend2"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         id="path4238"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       id="Arrow1Lend2a"
+       style="overflow:visible">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         id="path4262"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-222.58874,-923.85353)"
+     id="layer1">
+    <path
+       d="m 222.9515,973.60153 c 0.50762,0 18.47891,-5.63322 29.02336,-9.09755 2.55496,-0.83943 8.43427,-2.72725 13.06512,-4.19517 4.63089,-1.46791 11.29408,-3.58967 14.80717,-4.71501 11.54952,-3.69966 42.30585,-13.39341 42.49461,-13.39341 0.10166,0 0.18485,14.24392 0.18485,31.65316 l 0,31.65315 -6.53257,-1.9415 c -3.59292,-1.0679 -11.10537,-3.3757 -16.69434,-5.12873 -22.45302,-7.04196 -46.54325,-14.52694 -53.13157,-16.50815 -3.83245,-1.15241 -8.14394,-2.52736 -9.58111,-3.05539 -1.43716,-0.5281 -5.16074,-1.65156 -8.27458,-2.49667 -3.11387,-0.84511 -5.66157,-1.8152 -5.66157,-2.15565 0,-0.3405 0.13531,-0.61908 0.30062,-0.61908 z m 27.71754,3.30597 c 4.23131,1.24257 10.6982,3.21498 14.37094,4.38303 3.67278,1.16812 11.6425,3.66801 17.71054,5.55522 6.06804,1.88727 13.49906,4.22575 16.51339,5.19658 3.01433,0.97085 5.57705,1.64927 5.69493,1.50761 0.22518,-0.27061 0.33222,-15.46232 0.21612,-30.67129 -0.0684,-8.95991 -0.0712,-8.97747 -1.37505,-8.5368 -0.71858,0.24286 -4.8341,1.56688 -9.14559,2.94225 -9.4678,3.02026 -10.67622,3.40694 -24.67861,7.89712 -12.68525,4.06781 -26.54701,8.42031 -26.81686,8.42031 -0.10144,0 -0.18406,0.2355 -0.18372,0.52333 4e-4,0.28785 3.46266,1.54005 7.69391,2.78264 z"
+       id="path3110"
+       style="fill:#ffffff" />
+  </g>
+</svg>

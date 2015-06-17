@@ -1,0 +1,28 @@
+{
+  "name": "freethecyclelanes",
+  "version": "1.0.0",
+  "authors": [
+    "Keith <keith@vool.ie>"
+  ],
+    "repository": {
+  "type": "git",
+  "url": "git@github.com:vool/freethecyclelanes.git"
+},
+  "description": "A feed of from tweets tagged with #FreeTheCycleLAnes which have images.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch-dist": "3.3.4-slate",
+    "masonry": "~3.3.0",
+    "imagesloaded": "~3.1.8",
+    "fancybox": "~2.1.5",
+    "jquery-timeago": "~1.4.1",
+    "jquery": "~2.1.4"
+  }
+}
