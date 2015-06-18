@@ -63,7 +63,13 @@ function initialiceMasonry(){
 		
 		initialiceMasonry();
 		
-		//$('.fancybox').fancybox();
+		$('.fancybox').fancybox({ 
+           'padding'           : 0, 
+           'overlayShow'   : false, 
+           'transitionIn'  : 'elastic', 
+           'transitionOut' : 'elastic', 
+           'titlePosition' : 'over', 
+           'type' : 'image'});
 
 	});
 	
