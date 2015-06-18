@@ -70,6 +70,22 @@ header #tag {
 			color:#2f3339;	
 }
 
+.item  .refav{
+		padding:5px;
+		background-color: #fff;
+		color:#2f3339;	
+		text-align:right;
+}
+
+.item  .refav a{
+	color:#767676;
+	margin-right:10px;
+}
+
+
+.item  .refav a:hover{
+	color:#FBC237;
+}
 
 .item:hover {
 	

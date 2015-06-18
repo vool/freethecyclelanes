@@ -34,9 +34,24 @@ function initialiceMasonry(){
 
 			var img = '';
 
-			var  template ='<div class="item">{IMG}<a href="https://twitter.com/statuses/{TWEETID}" target="_blank"><div class="tweet-wrapper"><span class="text">{TEXT}</span>\
-                   <b>{AGO}</b>\
-                   by <span class="user">{USER}</span></div></div>';
+			var  template ='<div class="item">\
+								{IMG}\
+								<a href="https://twitter.com/statuses/{TWEETID}" target="_blank">\
+									<div class="tweet-wrapper">\
+										<span class="text">{TEXT}</span>\
+										<b>{AGO}</b>\
+										by <span class="user">{USER}</span>\
+									</div>\
+								</a>\
+								<div class="refav">\
+									<a href="https://twitter.com/intent/retweet?tweet_id={TWEETID}">\
+										<span class="glyphicon glyphicon-retweet warning"></span> {RT}\
+									</a>\
+									<a href="https://twitter.com/intent/favorite?tweet_id={TWEETID}">\
+										  <span class="glyphicon glyphicon-star"></span>{FAV}\
+									</a>\
+								</div>\
+							</div>';
 
                    	img = item.entities.media[0].media_url;
                    	img = '<a href="' + item.entities.media[0].media_url + ':large" class="fancybox">';
@@ -46,8 +61,10 @@ function initialiceMasonry(){
 			var this_tweet = template.replace("{TEXT}", item.text)
 						.replace("{IMG}", img)
 						.replace("{AGO}", $.timeago(Date.parse(item.created_at)))
-						.replace("{TWEETID}", item.id_str)
-						.replace("{USER}", "<b>@"+item.user.screen_name+'<b>')	
+						.replace(/({TWEETID})/gi, item.id_str)
+						.replace("{USER}", "<b>@"+item.user.screen_name+'<b>')
+						.replace("{RT}", item.retweet_count)
+						.replace("{FAV}", item.favorite_count)
 						.replace(/(#FreeTheCycleLanes)/gi, '<b>$1</b>');
 
 
