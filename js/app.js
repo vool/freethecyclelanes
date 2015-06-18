@@ -28,31 +28,33 @@ function initialiceMasonry(){
 
 		$.each(data, function(i,item){
 			
+			// status template
+			
+			var  template ='<div class="item">\
+					{IMG}\
+					<a href="https://twitter.com/statuses/{TWEETID}" target="_blank">\
+						<div class="tweet-wrapper">\
+							<span class="text">{TEXT}</span>\
+							<b>{AGO}</b>\
+							by <span class="user">{USER}</span>\
+						</div>\
+					</a>\
+					<div class="refav">\
+						<a href="https://twitter.com/intent/retweet?tweet_id={TWEETID}">\
+							<span class="glyphicon glyphicon-retweet warning"></span> {RT}\
+						</a>\
+						<a href="https://twitter.com/intent/favorite?tweet_id={TWEETID}">\
+							  <span class="glyphicon glyphicon-star"></span>{FAV}\
+						</a>\
+					</div>\
+				</div>';
+			
 			//$.each(data.statuses, function(i,item){
 			
 			// image media
 			if (item.entities && item.entities.media) {
 
 			var img = '';
-
-			var  template ='<div class="item">\
-								{IMG}\
-								<a href="https://twitter.com/statuses/{TWEETID}" target="_blank">\
-									<div class="tweet-wrapper">\
-										<span class="text">{TEXT}</span>\
-										<b>{AGO}</b>\
-										by <span class="user">{USER}</span>\
-									</div>\
-								</a>\
-								<div class="refav">\
-									<a href="https://twitter.com/intent/retweet?tweet_id={TWEETID}">\
-										<span class="glyphicon glyphicon-retweet warning"></span> {RT}\
-									</a>\
-									<a href="https://twitter.com/intent/favorite?tweet_id={TWEETID}">\
-										  <span class="glyphicon glyphicon-star"></span>{FAV}\
-									</a>\
-								</div>\
-							</div>';
 
                    	img = item.entities.media[0].media_url;
                    	img = '<a href="' + item.entities.media[0].media_url + ':large" class="fancybox">';
@@ -81,30 +83,6 @@ function initialiceMasonry(){
 					
 					// youtube 
 					if(url.expanded_url.indexOf("youtube") > -1){
-						
-						
-
-
-			var img = '';
-
-			var  template ='<div class="item">\
-								{IMG}\
-								<a href="https://twitter.com/statuses/{TWEETID}" target="_blank">\
-									<div class="tweet-wrapper">\
-										<span class="text">{TEXT}</span>\
-										<b>{AGO}</b>\
-										by <span class="user">{USER}</span>\
-									</div>\
-								</a>\
-								<div class="refav">\
-									<a href="https://twitter.com/intent/retweet?tweet_id={TWEETID}">\
-										<span class="glyphicon glyphicon-retweet warning"></span> {RT}\
-									</a>\
-									<a href="https://twitter.com/intent/favorite?tweet_id={TWEETID}">\
-										  <span class="glyphicon glyphicon-star"></span>{FAV}\
-									</a>\
-								</div>\
-							</div>';
 
                    	img = '<a href="'+Youtube.embed(url.expanded_url) +'" class="fancybox_yt" target="_blank">';
  					img += '<img src="' + Youtube.thumb(url.expanded_url) + '" class="previewtube" alt="" width="260" />';
