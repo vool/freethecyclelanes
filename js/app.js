@@ -82,7 +82,7 @@ function initialiceMasonry(){
 					
 					
 					// youtube 
-					if(url.expanded_url.indexOf("youtube") > -1){
+					if(Youtube.check(url.expanded_url)){
 
                    	img = '<a href="'+Youtube.embed(url.expanded_url) +'" class="fancybox_yt" target="_blank">';
  					img += '<img src="' + Youtube.thumb(url.expanded_url) + '" class="previewtube" alt="" width="260" />';
@@ -153,20 +153,20 @@ function initialiceMasonry(){
 var Youtube = (function () {
     'use strict';
  
-    var video, results;
+    var id;
  
     var getThumb = function (url, size) {
         if (url === null) {
             return '';
         }
         size    = (size === null) ? 'big' : size;
-        results = url.match('[\\?&]v=([^&#]*)');
-        video   = (results === null) ? url : results[1];
+        
+        id = getId(url);
  
         if (size === 'small') {
-            return 'http://img.youtube.com/vi/' + video + '/2.jpg';
+            return 'http://img.youtube.com/vi/' + id + '/2.jpg';
         }
-        return 'http://img.youtube.com/vi/' + video + '/0.jpg';
+        return 'http://img.youtube.com/vi/' + id + '/0.jpg';
     };
     
     
@@ -182,14 +182,28 @@ var Youtube = (function () {
 
    };
    
+       var isYoutube = function(url){
+
+			var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+			var match = url.match(regExp);
+			if (match && match[2].length == 11) {
+				return true;
+			} else {
+				//error
+				return false;
+			}
+
+   };
+   
    var getEmbed = function(url){
    	return 'http://www.youtube.com/embed/'+getId(url);
-   }
+   };
  
     return {
         thumb: getThumb,
         embed: getEmbed,
-        id: getId
+        id: getId,
+        check: isYoutube
     };
 }());
  
