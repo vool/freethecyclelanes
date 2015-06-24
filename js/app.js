@@ -84,9 +84,11 @@ function initialiceMasonry(){
 					// youtube 
 					if(Youtube.check(url.expanded_url)){
 
-                   	img = '<a href="'+Youtube.embed(url.expanded_url) +'" class="fancybox_yt" target="_blank">';
+                   	img = '<div class="video">';
+                   	img += '<a href="'+Youtube.embed(url.expanded_url) +'" class="fancybox_yt" target="_blank">';
  					img += '<img src="' + Youtube.thumb(url.expanded_url) + '" class="previewtube" alt="" width="260" />';
  					img += '</a>';
+ 					img += '</div>';
 
 			var this_tweet = template.replace("{TEXT}", item.text)
 						.replace("{IMG}", img)

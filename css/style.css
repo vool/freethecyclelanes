@@ -136,6 +136,19 @@ header #tag {
 .previewtube{
 }
 
+.video { position: relative; }
+
+.video:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;/*260px;*/
+    height: 100%;
+    z-index: 100;
+    background: transparent url(../img/play.png) no-repeat center;
+}
+
 /* Sticky footer styles
  -------------------------------------------------- */
 
