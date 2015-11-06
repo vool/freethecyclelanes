@@ -40,10 +40,10 @@ function initialiceMasonry(){
 						</div>\
 					</a>\
 					<div class="refav">\
-						<a href="https://twitter.com/intent/retweet?tweet_id={TWEETID}">\
+						<a href="https://twitter.com/intent/retweet?tweet_id={TWEETID}" title="Retweet">\
 							<span class="glyphicon glyphicon-retweet warning"></span> {RT}\
 						</a>\
-						<a href="https://twitter.com/intent/like?tweet_id={TWEETID}">\
+						<a href="https://twitter.com/intent/like?tweet_id={TWEETID}" title="Like">\
 							  <span class="glyphicon glyphicon-heart"></span>{LIKE}\
 						</a>\
 					</div>\
