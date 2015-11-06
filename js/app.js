@@ -43,8 +43,8 @@ function initialiceMasonry(){
 						<a href="https://twitter.com/intent/retweet?tweet_id={TWEETID}">\
 							<span class="glyphicon glyphicon-retweet warning"></span> {RT}\
 						</a>\
-						<a href="https://twitter.com/intent/favorite?tweet_id={TWEETID}">\
-							  <span class="glyphicon glyphicon-star"></span>{FAV}\
+						<a href="https://twitter.com/intent/like?tweet_id={TWEETID}">\
+							  <span class="glyphicon glyphicon-heart"></span>{LIKE}\
 						</a>\
 					</div>\
 				</div>';
@@ -67,7 +67,7 @@ function initialiceMasonry(){
 						.replace(/({TWEETID})/gi, item.id_str)
 						.replace("{USER}", "<b>@"+item.user.screen_name+'<b>')
 						.replace("{RT}", item.retweet_count)
-						.replace("{FAV}", item.favorite_count)
+						.replace("{LIKE}", item.favorite_count)
 						.replace(/(#FreeTheCycleLanes)/gi, '<b>$1</b>');
 
 
