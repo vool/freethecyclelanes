@@ -26,6 +26,17 @@ header #tag {
 	vertical-align: middle;
 }
 
+header .car{
+	position:absolute;
+	bottom:2.5em;
+	right:-1.5em;
+	
+	/* rotate && scale*/
+    -moz-transform:rotate(12deg) scale(1.2);
+    -webkit-transform:rotate(12deg) scale(1.2);
+    -o-transform:rotate(12deg) scale(1.2);
+    -ms-transform:rotate(12deg) scale(1.2);
+}
 
 #footer {
 	margin-top -100px;
