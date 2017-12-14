@@ -24,6 +24,7 @@
     "fancybox": "~2.1.5",
     "jquery-timeago": "~1.4.1",
     "jquery": "~2.1.4",
-    "previewtube": "*"
+    "previewtube": "*",
+    "FitText.js": "jquery-fittext#^1.2.0"
   }
 }

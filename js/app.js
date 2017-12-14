@@ -21,6 +21,8 @@ function initialiceMasonry(){
     $(document).ready(function() {
 
     	$('.fancybox').fancybox();
+    	
+    	$("#tag").fitText();
 
     	$.getJSON("tweets.php", function(data){
 
