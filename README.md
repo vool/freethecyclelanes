@@ -1,6 +1,6 @@
 # \#FreeTheCycleLanes
 
-Mircosite that displays the lateest tweets with media tagged with **\#FreeTheCycleLanes**
+Microsite that displays the lateest tweets with media tagged with **\#FreeTheCycleLanes**
 
 http://freethecyclelanes.vool.ie/
 
