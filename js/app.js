@@ -34,7 +34,7 @@ function initialiceMasonry(){
 			
 			var  template ='<div class="item">\
 					{IMG}\
-					<a href="https://twitter.com/statuses/{TWEETID}" target="_blank">\
+					<a href="https://twitter.com/user/status/{TWEETID}" target="_blank">\
 						<div class="tweet-wrapper">\
 							<span class="text">{TEXT}</span>\
 							<b>{AGO}</b>\
@@ -63,7 +63,7 @@ function initialiceMasonry(){
  					img += '<img src="' + item.entities.media[0].media_url + ':medium" alt="" width="260" />';
  					img += '</a>';
 
-			var this_tweet = template.replace("{TEXT}", item.text)
+			var this_tweet = template.replace("{TEXT}", item.full_text)
 						.replace("{IMG}", img)
 						.replace("{AGO}", $.timeago(Date.parse(item.created_at)))
 						.replace(/({TWEETID})/gi, item.id_str)
@@ -92,7 +92,7 @@ function initialiceMasonry(){
  					img += '</a>';
  					img += '</div>';
 
-			var this_tweet = template.replace("{TEXT}", item.text)
+			var this_tweet = template.replace("{TEXT}", item.full_text)
 						.replace("{IMG}", img)
 						.replace("{AGO}", $.timeago(Date.parse(item.created_at)))
 						.replace(/({TWEETID})/gi, item.id_str)

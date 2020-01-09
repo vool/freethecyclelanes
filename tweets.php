@@ -23,6 +23,7 @@ $twitter = new Twitter( $config['keys']['consumer_key'],
 $opts=array('q'=>$config['hashtag']."+exclude:retweets",
 			'result_type'=>'mixed',
 			'include_entities'=>TRUE,
+			'tweet_mode' => 'extended',
 			'count'=>100
 			);
 
