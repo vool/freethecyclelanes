@@ -1,38 +1,34 @@
 /**
  * @author Keith
- * 
- * 
+ *
+ *
  */
 
+function initialiseMasonry() {
+  var $container = $('#feed');
 
-function initialiceMasonry(){
-    var $container = $('#feed');
-    
-     
-        $container.imagesLoaded(function() {
-         //   $container.masonry('reload');
-            $container.masonry({
-                isInitLayout : true,
-                itemSelector: '.item'
-            });
-        });
-       }
+  $container.imagesLoaded(function() {
+    //   $container.masonry('reload');
+    $container.masonry({
+      isInitLayout: true,
+      itemSelector: '.item'
+    });
+  });
+}
 
-    $(document).ready(function() {
+$(document).ready(function() {
 
-    	$('.fancybox').fancybox();
-    	
-    	$("#tag").fitText();
+  $('.fancybox').fancybox();
 
-    	$.getJSON("tweets.php", function(data){
+  $("#tag").fitText();
 
-		var tweets = [];
+  $.getJSON("tweets.php", function(data) {
 
-		$.each(data, function(i,item){
-			
-			// status template
-			
-			var  template ='<div class="item">\
+    var tweets = [];
+$.each(data, function(i, item) {
+
+      // status template
+      var template = '<div class="item">\
 					{IMG}\
 					<a href="https://twitter.com/user/status/{TWEETID}" target="_blank">\
 						<div class="tweet-wrapper">\
@@ -50,9 +46,9 @@ function initialiceMasonry(){
 						</a>\
 					</div>\
 				</div>';
-			
+
 			//$.each(data.statuses, function(i,item){
-			
+
 			// image media
 			if (item.entities && item.entities.media) {
 
@@ -75,15 +71,15 @@ function initialiceMasonry(){
 
 			//$('#feed').append( this_tweet ).masonry( 'appended', this_tweet, true ).masonry( 'reload' );
 			tweets.push(this_tweet);
-			
-			
+
+
 			// other (3rd parties) media
 			}else if(item.entities.urls){
-				
+
 				item.entities.urls.forEach(function(url){
-					
-					
-					// youtube 
+
+
+					// youtube
 					if(Youtube.check(url.expanded_url)){
 
                    	img = '<div class="video">';
@@ -104,112 +100,133 @@ function initialiceMasonry(){
 
 			//$('#feed').append( this_tweet ).masonry( 'appended', this_tweet, true ).masonry( 'reload' );
 			tweets.push(this_tweet);
-			
-						
+
+
 						//alert(Youtube.thumb(url.expanded_url));
-						
-						
+
+
 					}
 				});
-				
+
 			}
 
 		});
-		
+
 		$('#loading').hide();
-		
+
 		$('#feed').append( tweets).masonry( 'appended', tweets, true );
-		
+
 		initialiceMasonry();
-		
+
 		$('.fancybox').fancybox({
-           'padding'           : 0, 
-           'overlayShow'   : false, 
-           'transitionIn'  : 'elastic', 
-           'transitionOut' : 'elastic', 
-           'titlePosition' : 'over', 
+           'padding'           : 0,
+           'overlayShow'   : false,
+           'transitionIn'  : 'elastic',
+           'transitionOut' : 'elastic',
+           'titlePosition' : 'over',
            'type' : 'image'
            });
-           
-           
+
+
         $('.fancybox_yt').fancybox({
-           'padding'           : 0, 
-           'overlayShow'   : false, 
-           'transitionIn'  : 'elastic', 
-           'transitionOut' : 'elastic', 
-           'titlePosition' : 'over', 
+           'padding'           : 0,
+           'overlayShow'   : false,
+           'transitionIn'  : 'elastic',
+           'transitionOut' : 'elastic',
+           'titlePosition' : 'over',
             'type': 'iframe',
         });
-           
-           
 
-		$('.previewtube').PreViewTube({
-			'interval' : 500,
-			'mode' : 'constant'
-		}); 
+      }
+
+    });
+
+    $('#loading').hide();
+
+    $('#feed').append(tweets).masonry('appended', tweets, true);
+
+    initialiseMasonry();
+
+    $('.fancybox').fancybox({
+      'padding': 0,
+      'overlayShow': false,
+      'transitionIn': 'elastic',
+      'transitionOut': 'elastic',
+      'titlePosition': 'over',
+      'type': 'image'
+    });
 
 
-	});
-	
-	});
-	
+    $('.fancybox_yt').fancybox({
+      'padding': 0,
+      'overlayShow': false,
+      'transitionIn': 'elastic',
+      'transitionOut': 'elastic',
+      'titlePosition': 'over',
+      'type': 'iframe',
+    });
 
-var Youtube = (function () {
-    'use strict';
- 
-    var id;
- 
-    var getThumb = function (url, size) {
-        if (url === null) {
-            return '';
-        }
-        size    = (size === null) ? 'big' : size;
-        
-        id = getId(url);
- 
-        if (size === 'small') {
-            return 'http://img.youtube.com/vi/' + id + '/2.jpg';
-        }
-        return 'http://img.youtube.com/vi/' + id + '/0.jpg';
-    };
-    
-    
-    var getId = function(url){
+    $('.previewtube').PreViewTube({
+      'interval': 500,
+      'mode': 'constant'
+    });
 
-			var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-			var match = url.match(regExp);
-			if (match && match[2].length == 11) {
-				return match[2];
-			} else {
-				//error
-			}
+  });
 
-   };
-   
-       var isYoutube = function(url){
+});
 
-			var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-			var match = url.match(regExp);
-			if (match && match[2].length == 11) {
-				return true;
-			} else {
-				//error
-				return false;
-			}
+var Youtube = (function() {
+  'use strict';
 
-   };
-   
-   var getEmbed = function(url){
-   	return 'http://www.youtube.com/embed/'+getId(url);
-   };
- 
-    return {
-        thumb: getThumb,
-        embed: getEmbed,
-        id: getId,
-        check: isYoutube
-    };
+  var id;
+
+  var getThumb = function(url, size) {
+    if (url === null) {
+      return '';
+    }
+    size = (size === null) ? 'big' : size;
+
+    id = getId(url);
+
+    if (size === 'small') {
+      return 'http://img.youtube.com/vi/' + id + '/2.jpg';
+    }
+    return 'http://img.youtube.com/vi/' + id + '/0.jpg';
+  };
+
+  var getId = function(url) {
+
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match && match[2].length == 11) {
+      return match[2];
+    } else {
+      //error
+    }
+
+  };
+
+  var isYoutube = function(url) {
+
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match && match[2].length == 11) {
+      return true;
+    } else {
+      //error
+      return false;
+    }
+
+  };
+
+  var getEmbed = function(url) {
+    return 'http://www.youtube.com/embed/' + getId(url);
+  };
+
+  return {
+    thumb: getThumb,
+    embed: getEmbed,
+    id: getId,
+    check: isYoutube
+  };
 }());
- 
-
-
